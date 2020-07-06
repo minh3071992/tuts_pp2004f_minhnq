@@ -21,3 +21,12 @@ Route::get('/ticket/{slug?}/edit','TicketsController@edit');
 Route::post('/ticket/{slug?}/edit','TicketsController@update');
 Route::post('/ticket/{slug?}/delete','TicketsController@destroy');
 Route::post('/comment', 'CommentsController@newComment');
+Auth::routes();
+
+Route::view('/', 'home');
+Route::get('home', 'PagesController@home');
+Route::get('users/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('users/register', 'Auth\RegisterController@register');
+Route::get('users/logout', 'Auth\LoginController@logout');
+Route::get('users/login', 'Auth\LoginController@showLoginForm');
+Route::post('users/login', 'Auth\LoginController@login');
