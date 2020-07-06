@@ -20,8 +20,12 @@
                     Member
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/users/register">Register</a>
-                    <a class="dropdown-item" href="/users/login">Login</a>
+                    @if (Auth::check())
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                    @else
+                        <a class="dropdown-item" href="/users/register">Register</a>
+                        <a class="dropdown-item" href="/users/login">Login</a>
+                    @endif
                 </div>
             </li>
         </ul>
