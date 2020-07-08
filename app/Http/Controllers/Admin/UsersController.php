@@ -39,6 +39,6 @@ class UsersController extends Controller
         $user->save();
         $user->syncRoles($request->get('role'));
 
-        return redirect("admin.users." . $user->id . ".edit")->with('status', 'The user has been updated!');
+        return redirect("admin/users/" . $user->id . "/edit")->with('status', 'The user has been updated!');
     }
 }
