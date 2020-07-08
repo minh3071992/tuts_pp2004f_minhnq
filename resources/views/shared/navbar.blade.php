@@ -21,6 +21,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     @if (Auth::check())
+                        @role('manager')
+                            <a class="dropdown-item" href="/admin">Admin</a>
+                        @endrole
                         <a class="dropdown-item" href="/users/logout">Logout</a>
                     @else
                         <a class="dropdown-item" href="/users/register">Register</a>
