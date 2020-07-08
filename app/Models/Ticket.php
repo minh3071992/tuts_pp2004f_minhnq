@@ -14,8 +14,11 @@ class Ticket extends Model
         'user_id'
     ];
 
+    protected $guarded = ['id'];
+
+
     public function comments()
     {
-        return $this->hasMany(Comment::class, 'post_id');
+        return $this->morphMany('App\Models\Comment', 'post');
     }
 }

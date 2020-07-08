@@ -8,8 +8,8 @@ class Comment extends Model
 {
     protected $guarded = ['id'];
 
-    public function ticket()
+    public function post()
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->morphTo();
     }
 }
